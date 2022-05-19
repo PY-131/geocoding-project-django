@@ -23,7 +23,7 @@ git clone https://github.com/PY-131/geocoding-project.git
 ## Get API Key from LocationIQ
 
 1. https://locationiq.com/ (Register to get API key)
-2. create .env file and put values in there see .env.example for a sample
+2. create .env file and put values in there see .env.example for a sample (rename to .env)
 
 ## Run script 
 1. (venv) python manage.py runserver
