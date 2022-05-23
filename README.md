@@ -4,13 +4,13 @@
 
 ### ssh
 ```
-git clone git@github.com:PY-131/geocoding-project.git 
+git clone git@github.com:PY-131/geocoding-project-django.git
 
 ```
 
 ### https 
 ```
-git clone https://github.com/PY-131/geocoding-project.git
+git clone https://github.com/PY-131/geocoding-project-django.git
 ```
 
 
