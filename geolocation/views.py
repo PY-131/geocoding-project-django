@@ -1,22 +1,34 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from .forms import AddressForm
-from .utils import get_coordinates
+from .utils import *
 
-
-# Create your views here.
 def index(request):
-    # if this is a POST request we need to process the form data
+    
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = AddressForm(request.POST)
-        # check whether it's valid:
+
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
             addy = form.cleaned_data['address']
             res = get_coordinates(addy)
             return render(request, 'geolocation/results.html', res)
     else:
     	form = AddressForm()
     return render(request, 'geolocation/index.html', {'form': form})
+
+def iss_people(request):
+	return JsonResponse(get_iss_people())
+
+def iss_location(request):
+	return JsonResponse(get_iss_location())
+
+def iss_info(request):
+	
+	people = get_iss_people()
+	location = get_iss_location()
+	people.update(location)
+	return JsonResponse(people)
+
+
+
+
