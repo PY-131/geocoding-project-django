@@ -22,20 +22,25 @@ class TestIndexView:
         assert resp.status_code == 200
 
 
-
-class TestIssView:
+class TestISSView:
 
     def test_iss_people(self):
         req = RequestFactory().get(reverse("iss_people"))
         resp = views.iss_people(req)
         assert resp.status_code == 200 
+        assert b"people" in resp.content
 
     def test_iss_location(self):
         req = RequestFactory().get(reverse("iss_location"))
         resp = views.iss_location(req)
         assert resp.status_code == 200
+        assert b"lon" in resp.content
+        assert b"lat" in resp.content
 
     def test_iss_info(self):
         req = RequestFactory().get(reverse("iss_info"))
         resp = views.iss_info(req)
         assert resp.status_code == 200
+        assert b"lon" in resp.content
+        assert b"lat" in resp.content
+        assert b"people" in resp.content
