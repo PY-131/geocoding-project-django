@@ -8,9 +8,19 @@ class TestIndexView:
     It's optional to create a class, but it helps to group tests into suites
     """
     def test_index(self):
+
+        # reverse helps allows us to query by the name of the view
         req = RequestFactory().get(reverse("index"))
         resp = views.index(req)
         assert resp.status_code == 200
+
+    def test_index_post(self):
+
+        # reverse helps allows us to query by the name of the view
+        req = RequestFactory().post(reverse("index"), address="33 main st")
+        resp = views.index(req)
+        assert resp.status_code == 200
+
 
 
 class TestIssView:
