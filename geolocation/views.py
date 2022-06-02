@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .forms import AddressForm
 from .utils import *
 
@@ -33,7 +33,7 @@ def iss_info(request):
 def get_time(request):
 
     time_now = get_time_now()
-    return JsonResponse(time_now)
+    return HttpResponse(time_now)
 
 
 
