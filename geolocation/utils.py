@@ -9,12 +9,12 @@ def get_coordinates(address):
     """
 
     data = {
-      'key': ENV['PRIVATE_TOKEN'],
+      'key': os.getenv('PRIVATE_TOKEN'),
       'q': address,
       'format': 'json'
       }
     try:
-       response = rqs.get(ENV['URL'], params=data)
+       response = rqs.get(os.getenv('URL'), params=data)
     except Exception as e:
        raise e
 
@@ -32,7 +32,7 @@ def get_iss_location():
     """
     
     res = {}
-    response = __run_request(ENV['ISS_URL'], "iss-now.json")
+    response = __run_request(os.getenv('ISS_URL'), "iss-now.json")
 
     if response['message'] == 'success':
       iss_pos = response['iss_position']
@@ -52,7 +52,7 @@ def get_iss_people():
     """
 
     people = {}
-    response = __run_request(ENV['ISS_URL'], "astros.json") 
+    response = __run_request(os.getenv('ISS_URL'), "astros.json") 
 
     if response['message'] == 'success': 
       people['people'] = [person["name"] for person in response["people"]] 
