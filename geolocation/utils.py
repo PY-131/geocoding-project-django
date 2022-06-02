@@ -1,9 +1,9 @@
 import os
 import requests as rqs
-from dotenv import dotenv_values
+from dotenv import load_dotenv
 from datetime import datetime
 
-ENV = dotenv_values()  
+load_dotenv()
 def get_coordinates(address):
     """
     Queries Location API and get's coordinates
