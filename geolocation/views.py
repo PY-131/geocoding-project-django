@@ -30,5 +30,10 @@ def iss_info(request):
 	return JsonResponse(people)
 
 
+def get_time(request):
+
+    time_now = get_time_now()
+    return JsonResponse(time_now)
+
 
 

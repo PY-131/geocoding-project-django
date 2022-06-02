@@ -1,6 +1,7 @@
 import os
 import requests as rqs
 from dotenv import dotenv_values
+from datetime import datetime
 
 ENV = dotenv_values()  
 def get_coordinates(address):
@@ -58,6 +59,8 @@ def get_iss_people():
       people['people'] = [person["name"] for person in response["people"]] 
     
     return people
+
+def get_time_now(): return datetime.now()
 
 def __run_request(url, endpoint):
 

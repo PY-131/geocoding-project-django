@@ -7,4 +7,6 @@ urlpatterns = [
     path('iss_people', views.iss_people, name='iss_people'),
     path('iss_location', views.iss_location, name='iss_location'),
     path('iss_info', views.iss_info, name='iss_info'),
+    path('time', views.get_time, name='time'),
+
 ]
