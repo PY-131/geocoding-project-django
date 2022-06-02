@@ -33,7 +33,8 @@ def iss_info(request):
 def get_time(request):
 
     time_now = get_time_now()
-    return HttpResponse(time_now)
+    res = {'time': time_now}
+    return JsonResponse(res)
 
 
 

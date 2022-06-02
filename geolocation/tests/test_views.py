@@ -44,3 +44,11 @@ class TestISSView:
         assert b"lon" in resp.content
         assert b"lat" in resp.content
         assert b"people" in resp.content
+
+class TestTimeView:
+
+    def test_get_time(self):
+        req = RequestFactory().get(reverse("time_"))
+        resp = views.get_time(req)
+        assert resp.status_code == 200
+        assert b'time' in resp.content
