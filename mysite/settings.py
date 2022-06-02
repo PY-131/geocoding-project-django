@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-xn-t-gtd6i@+r^pm(f81+d7!&5i_&xmj&j-6=r6ke!vgjs)=&^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://geolocation-django-example.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
